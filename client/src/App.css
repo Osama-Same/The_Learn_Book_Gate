@@ -1,0 +1,20 @@
+body {
+  margin: auto;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Header Page */
+
+.header {
+  min-height: "30vh";
+  background-position: "center";
+  background-size: "cover";
+  background-repeat: "no-repeat";
+  color: "white";
+  background-image:
+    " url('https://lh3.googleusercontent.com/0x7FTCCxabauk4GkUeYvCodeIcA8DTjdxaq9BYBWvA36tU0g5ASjVh8z74r27BlRrL2uniYM7w-gEUl37iAFLr8xZxgFo_j8AUrIgXc')",
+
+}
+
