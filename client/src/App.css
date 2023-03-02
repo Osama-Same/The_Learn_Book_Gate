@@ -5,16 +5,15 @@ body {
 }
 
 
-/* Header Page */
 
-.header {
-  min-height: "30vh";
-  background-position: "center";
+/* display_book */
+
+.display_book {
+  background-image: url("https://res.cloudinary.com/marki/image/upload/v1677779230/Book/images_mmtbpo.jpg");
+  color: black;
   background-size: "cover";
   background-repeat: "no-repeat";
-  color: "white";
-  background-image:
-    " url('https://lh3.googleusercontent.com/0x7FTCCxabauk4GkUeYvCodeIcA8DTjdxaq9BYBWvA36tU0g5ASjVh8z74r27BlRrL2uniYM7w-gEUl37iAFLr8xZxgFo_j8AUrIgXc')",
-
+  min-height: "1000vh";
+  font-family: Arial, Helvetica, sans-serif;
 }
 
