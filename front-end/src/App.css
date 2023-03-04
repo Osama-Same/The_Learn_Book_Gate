@@ -1,0 +1,68 @@
+body {
+  margin: auto;
+  padding: auto;
+}
+
+/* Header */
+
+.header {
+  min-height: 40vh;
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  color: white;
+  background-image: url("https://cdn.shortpixel.ai/client/to_auto,q_lossy,ret_img/http://www.hkmu.edu.hk/wp-content/uploads/sites/2/2021/05/student-searching-books-library.jpg");
+}
+
+.header h5 {
+  font-size: 30px;
+  font-family: sans-serif;
+  text-align: end;
+  padding-top: 17%;
+}
+
+.header span {
+  color: blue;
+  font-size: 35px;
+}
+
+@media (max-width: 500px) {
+  .header h5 {
+    padding-top: 53%;
+  }
+}
+
+/* navbar */
+
+.navbar {
+  background-color: gainsboro;
+}
+.navbar a {
+  font-family: sans-serif;
+  text-align: end;
+  padding: 0px;
+  padding-left: 20px;
+}
+
+/* FormSearch */
+
+.FormSearch {
+  padding: 5%;
+}
+
+@media (max-width: 500px) {
+  .FormSearch button {
+    width: 30%;
+  }
+  .FormSearch .input-group button {
+    display: none;
+  }
+}
+
+
+/* display */
+
+.display{
+  background-color: rgb(236, 236, 236);
+  min-height: 100vh;
+}

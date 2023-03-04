@@ -16,7 +16,7 @@ const getAllBooks = (req, res) => {
 
 const newBook = async (req, res) => {
   const pdffile = fs.readFileSync(
-    path.resolve(__dirname, `../public/${req.file.originalname}`)
+    path.resolve(__dirname, `../public/${req.file?.originalname}`)
   );
   pdfparse(pdffile).then((data) => {
     console.log(data.numpages);

@@ -60,18 +60,11 @@ export function Login(props) {
               const admin = { name: name, password: password };
               const res = await login(admin);
               if (res.x_trusted === 1) {
-                localStorage.setItem("token", res.password);
+                localStorage.setItem("token", res.x_trusted);
                 props.setOpen(false);
-                return (
-                  <Button
-                    variant="contained"
-                    color="info"
-                    href={require(`../../../../public/${props.book.book_PDF}`)}
-                    download
-                  />
-                );
               } else {
-                console.log(0);
+                console.log("You are not Admin");
+                props.setOpen(false);
               }
             }}
           >

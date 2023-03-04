@@ -1,19 +1,18 @@
-import HomeIcon from "@mui/icons-material/Home";
 import { Container } from "@mui/material";
 import { Link } from "react-router-dom";
+import HomeIcon from "@mui/icons-material/Home";
 export function Navbar() {
   return (
-    <div style={{ background: "silver" }}>
+    <div className="navbar">
       <Container maxWidth="lg">
-        <ul className="nav justify-content-end">
+        <ul className="nav justify-content-end d-flex">
           <li className="nav-item">
-            <Link className="nav-link">نتائج البحث</Link>
+            <Link className="nav-link text-primary" to={""}>
+              نتائج البحث
+            </Link>
           </li>
           <li className="nav-item">
-            <Link
-              className="nav-link"
-              style={{ color: "black", paddingLeft: "10px" }}
-            >
+            <Link className="nav-link text-dark" to={""}>
               / الرئيسية <HomeIcon />
             </Link>
           </li>

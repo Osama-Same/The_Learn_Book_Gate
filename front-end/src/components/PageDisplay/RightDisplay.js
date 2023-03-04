@@ -1,17 +1,14 @@
+import { Card, Typography, Checkbox, Chip } from "@mui/material";
 import TreeView from "@mui/lab/TreeView";
+import TreeItem from "@mui/lab/TreeItem";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import TreeItem from "@mui/lab/TreeItem";
-import { Card, Checkbox, Chip, Typography } from "@mui/material";
-
-
-
-export function FilterResults(props) {
+export function RightDisplay(props) {
   const handleDelete = () => {
     console.info("You clicked the delete icon.");
   };
   return (
-    <div className="col-md-3 pt-3 pb-3 text-end">
+    <div className="text-end">
       <Typography variant="body1">تصفية النتائج</Typography>
       <div className="row">
         <div className="col pt-3 pb-3 ">
@@ -34,24 +31,21 @@ export function FilterResults(props) {
                 sx={{ textAlign: "end", mb: 3 }}
               >
                 <hr />
-                <TreeItem
-                  nodeId="0"
-                  label={
-                    <div>
-                      <span>الموضوع الأول (255)</span>
-                      <Checkbox />
+                {props.booksSubject.map((e, i) => {
+                  return (
+                    <div key={i._id}>
+                      <TreeItem
+                        nodeId={e._id}
+                        label={
+                          <div key={i._id}>
+                            <span>{e.book_Subjects} (255)</span>
+                            <Checkbox />
+                          </div>
+                        }
+                      ></TreeItem>
                     </div>
-                  }
-                />
-                <TreeItem
-                  nodeId="10"
-                  label={
-                    <div>
-                      <span>الموضوع الثاني (18)</span>
-                      <Checkbox />
-                    </div>
-                  }
-                />
+                  );
+                })}
               </TreeItem>
             </Card>
             <Card
@@ -68,9 +62,9 @@ export function FilterResults(props) {
                 sx={{ textAlign: "end", mb: 3 }}
               >
                 <hr />
-                {props.books.map((e ,i) => {
+                {props.books.map((e, i) => {
                   return (
-                    <div>
+                    <div key={i._id}>
                       <TreeItem
                         nodeId={e._id}
                         label={
@@ -99,9 +93,9 @@ export function FilterResults(props) {
                 sx={{ textAlign: "end", mb: 3 }}
               >
                 <hr />
-                {props.books.map((e) => {
+                {props.books.map((e,i) => {
                   return (
-                    <div>
+                    <div key={i._id}>
                       <TreeItem
                         nodeId={e._id}
                         label={
@@ -116,6 +110,7 @@ export function FilterResults(props) {
                 })}
               </TreeItem>
             </Card>
+
             <Card
               sx={{
                 mb: 3,
@@ -130,9 +125,9 @@ export function FilterResults(props) {
                 sx={{ textAlign: "end", mb: 3 }}
               >
                 <hr />
-                {props.books.map((e) => {
+                {props.books.map((e,i) => {
                   return (
-                    <div>
+                    <div key={i._id}>
                       <TreeItem
                         nodeId={e._id}
                         label={
@@ -192,9 +187,9 @@ export function FilterResults(props) {
                 sx={{ textAlign: "end", mb: 3 }}
               >
                 <hr />
-                {props.books.map((e) => {
+                {props.books.map((e,i) => {
                   return (
-                    <div>
+                    <div key={i._id}>
                       <TreeItem
                         nodeId={e._id}
                         label={

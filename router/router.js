@@ -8,7 +8,10 @@ const {
   searchBookSubjects,
   search,
 } = require("../controller/book");
-
+const {
+  getBookSubject,
+  newBookSubject,
+} = require("../controller/book_Subject");
 const { getAdmin, newAdmin, login } = require("../controller/admin");
 const router = express.Router();
 
@@ -26,5 +29,11 @@ router.get("/search/:Key", search);
 router.get("/admin", getAdmin);
 router.post("/admin", newAdmin);
 router.post("/login", login);
+
+// book Subject
+
+router.get("/book_Subject", getBookSubject);
+router.post("/book_Subject", newBookSubject);
+
 
 module.exports = router;
