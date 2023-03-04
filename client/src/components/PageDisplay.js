@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Button,
   Card,
@@ -15,8 +15,11 @@ import PlayForWorkIcon from "@mui/icons-material/PlayForWork";
 import PlagiarismIcon from "@mui/icons-material/Plagiarism";
 import { Link } from "react-router-dom";
 import { FilterResults } from "./FilterResults";
-
+import { Login } from "./admin/login";
 export function PageDisplay(props) {
+  const [open, setOpen] = useState(false);
+  const [book, setBook] = useState(null);
+  let token = localStorage.getItem("token");
   return (
     <div>
       <div className="display_book">
@@ -104,11 +107,33 @@ export function PageDisplay(props) {
                                   color="info"
                                   endIcon={<LibraryAddIcon />}
                                 />
-                                <Button
-                                  variant="text"
-                                  color="info"
-                                  endIcon={<DownloadIcon />}
-                                />
+                                {!token && (
+                                  <Button
+                                    variant="contained"
+                                    color="info"
+                                    endIcon={<DownloadIcon />}
+                                    onClick={() => {
+                                      setOpen(true);
+                                      setBook(e);
+                                    }}
+                                    /*   href={require(`../../../public/${e.book_PDF}`)}
+                                       download */
+                                  >
+                                    PDF
+                                  </Button>
+                                )}
+
+                                {token && (
+                                  <Button
+                                    variant="contained"
+                                    color="info"
+                                    href={require(`../../../public/${e.book_PDF}`)}
+                                    download
+                                  >
+                                    download
+                                  </Button>
+                                )}
+
                                 <Button
                                   variant="text"
                                   color="info"
@@ -158,7 +183,7 @@ export function PageDisplay(props) {
                                 src={e.book_cover}
                                 alt="book_cover"
                                 width={180}
-                                height={200}
+                                height={220}
                               />
                               <button
                                 type="button"
@@ -186,6 +211,7 @@ export function PageDisplay(props) {
           </div>
         </Container>
       </div>
+      {open && <Login open={open} setOpen={setOpen} book={book} />}
     </div>
   );
 }

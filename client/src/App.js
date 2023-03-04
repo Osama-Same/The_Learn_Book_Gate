@@ -21,11 +21,8 @@ const App = () => {
         <PageSearch books={books} setBooks={setBooks}/>
       </div>
       <div>
-        <PageDisplay books={books} setBooks={setBooks} />
+        <PageDisplay books={books} setBooks={setBooks} update={update()}/>
       </div>
-      <Routes>
-        <Route></Route>
-      </Routes>
     </BrowserRouter>
   );
 };

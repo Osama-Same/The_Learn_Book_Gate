@@ -9,3 +9,13 @@ export async function _getAllBook() {
       toast.error("Error server");
     }
   }
+export async function _searchBookTitle() {
+    const res = await axios.get(url + "search");
+    if (res.data) {
+      return res.data;
+    } else {
+      toast.error("Error server");
+    }
+  }
+
+

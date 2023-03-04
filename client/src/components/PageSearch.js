@@ -3,12 +3,12 @@ import { Header } from "./Header";
 import { Navbar } from "./Navbar";
 import { FormSearch } from "./FormSearch";
 
-const PageSearch = () => {
+const PageSearch = (props) => {
   return (
     <div>
       <Header />
       <Navbar />
-      <FormSearch />
+      <FormSearch books={props.books} setBooks={props.setBooks}/>
     </div>
   );
 };

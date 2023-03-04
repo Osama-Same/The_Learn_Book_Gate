@@ -1,7 +1,22 @@
+import React, { useState, useEffect } from "react";
 import { Container } from "@mui/material";
 import { Link } from "react-router-dom";
 
-export function FormSearch() {
+export function FormSearch(props) {
+  const [search, setSearch] = useState("");
+  const handleSearchChange = (e) => {
+    setSearch(e.target.value);
+    if (e.target.value === "") {
+      props.setBooks([...props.books]);
+      return;
+    }
+    props.setBooks(
+      props.books.filter((value) => {
+        return value.book_title.indexOf(search) !== -1;
+      })
+    );
+  };
+
   return (
     <Container maxWidth="lg" sx={{ mt: "100px" }}>
       <div className="row">
@@ -13,9 +28,12 @@ export function FormSearch() {
         <div className="col-10">
           <div className="input-group ">
             <input
-              type="text"
+              type="search"
+              placeholder="Search"
               className="form-control form-control-sm"
               aria-label="Text input with 2 dropdown buttons"
+              value={search}
+              onChange={handleSearchChange}
             />
             <button
               className="btn btn-outline-secondary dropdown-toggle btn-sm"
