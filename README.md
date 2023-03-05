@@ -32,7 +32,8 @@ name : osama
 password : 12345
 
 x_trusted: 1
-
+ 
+Download PDF
 
 # if user
 
@@ -41,6 +42,8 @@ name : ali
 password : 12345
 
 x_trusted: 0
+
+Not Download PDF
 
 # Click icon download PDF 
 
