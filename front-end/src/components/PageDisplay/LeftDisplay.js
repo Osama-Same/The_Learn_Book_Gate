@@ -194,19 +194,21 @@ export function LeftDisplay(props) {
                     </div>
                     <div className="col-3">
                       <img
-                        className="pt-3 pb-3"
+                        className="pt-3 pb-2"
                         src={e.book_cover}
                         alt="book_cover"
                         width={180}
-                        height={220}
+                        height={200}
                       />
-                      <button
+                      <Button
                         type="button"
+                        variant="contained"
                         className="btn btn-primary btn-sm"
                         style={{ width: "180px" }}
+                        href={"/book/" + e._id}
                       >
                         أقر الوثيقة
-                      </button>
+                      </Button>
                     </div>
                   </div>
                 </div>

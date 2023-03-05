@@ -1,13 +1,17 @@
 import "./App.css";
 import PageSearch from "./components/PageSearch";
 import PageDisplay from "./components/PageDisplay";
-import { BrowserRouter } from "react-router-dom";
+import { PageDetails } from "./components/PageDetails";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <PageSearch />
-        <PageDisplay />
+        <Routes>
+          <Route path="/" element={<PageDisplay />} />
+          <Route path="/book/:_id" element={<PageDetails />} />
+        </Routes>
       </div>
     </BrowserRouter>
   );

@@ -44,8 +44,13 @@ const newBook = async (req, res) => {
 const getBookDetails = (req, res) => {
   let id = req.params._id;
   let o_id = new ObjectId(id);
-  Books.findOne({ _id: o_id }).then((result) => {
-    res.json(result);
+  Books.findOne({ _id: o_id }, (err, result) => {
+    if (err) {
+      res.json(err);
+    }
+    if (result) {
+      res.json({ result: result });
+    }
   });
 };
 

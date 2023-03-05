@@ -10,7 +10,7 @@ export function RightDisplay(props) {
   return (
     <div className="text-end">
       <Typography variant="body1">تصفية النتائج</Typography>
-      <div className="row">
+      <div className="row pt-3 pb-3">
         <div className="col pt-3 pb-3 ">
           <TreeView
             defaultCollapseIcon={<ExpandMoreIcon color="info" />}
@@ -20,7 +20,7 @@ export function RightDisplay(props) {
             <Card
               sx={{
                 mb: 3,
-                mt: 5,
+                mt: 6,
                 pt: 2,
                 backgroundColor: "#dbdfe3",
               }}

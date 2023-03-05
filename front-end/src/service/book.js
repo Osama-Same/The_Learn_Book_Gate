@@ -23,12 +23,14 @@ export async function _newBook(book) {
 }
 
 export async function _detailsBook(_id) {
-  const res = await axios.post(url + "book", _id);
+  const res = await axios.get(url + `book/${_id}`);
   if (res.data) {
-    return res.data;
+    console.log(res.data.result)
+    return res.data.result;
   } else {
     toast.error("Error server");
   }
+  
 }
 
 
