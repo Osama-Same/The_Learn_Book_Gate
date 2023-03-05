@@ -45,3 +45,5 @@ x_trusted: 0
 # Click icon download PDF 
 
 #  Click icon info Book Details
+
+# click    أقر الوثيقة  book Details
