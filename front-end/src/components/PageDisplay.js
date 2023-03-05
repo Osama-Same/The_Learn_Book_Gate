@@ -10,19 +10,22 @@ const PageDisplay = () => {
   const [booksSubject, setbooksSubject] = useState([]);
   useEffect(() => {
     update();
-  });
+  }, []);
   const update = async () => {
-    let _books = await _getAllBook();
-    let _booksSubject = await _getBookSubject();
+    const _books = await _getAllBook();
+    const _booksSubject = await _getBookSubject();
 
     setBooks(_books);
     setbooksSubject(_booksSubject);
   };
 
-
   return (
     <div>
-      <FormSearch />
+      <FormSearch
+        books={books}
+        setBooks={setBooks}
+        update={update}
+      />
       <div className="display">
         <Container maxWidth="lg" sx={{ mb: 10, mt: 10 }}>
           <div className="row pt-3 pb-3">

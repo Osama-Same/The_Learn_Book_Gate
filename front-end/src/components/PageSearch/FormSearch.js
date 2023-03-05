@@ -1,4 +1,4 @@
-
+import { useState } from "react";
 import {
   Button,
   Container,
@@ -9,6 +9,7 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
 export function FormSearch(props) {
+  const [search, setSearch] = useState("");
 
   return (
     <div className="FormSearch">
@@ -23,6 +24,17 @@ export function FormSearch(props) {
             type="submit"
             variant="contained"
             sx={{ width: 100 }}
+            onClick={async (e) => {
+              if (search === "") {
+                return props.update();
+              }
+              let a = props.books.filter((e) => {
+                return (
+                  e.book_title.includes(search) || e.book_type.includes(search)
+                );
+              });
+              props.setBooks(a);
+            }}
           >
             بحث المتقدم
           </Button>
@@ -30,7 +42,9 @@ export function FormSearch(props) {
             <TextField
               fullWidth
               size="small"
-              placeholder="search"
+              placeholder="search book Title or book Type"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">

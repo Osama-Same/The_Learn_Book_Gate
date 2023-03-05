@@ -5,12 +5,8 @@ const path = require("path");
 const pdfparse = require("pdf-parse");
 
 const getAllBooks = (req, res) => {
-  Books.find((err, result) => {
-    if (err) {
-      res.json(err);
-    } else {
-      res.json(result);
-    }
+  Books.find().then((result) => {
+    res.json(result);
   });
 };
 
